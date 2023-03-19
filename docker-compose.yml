@@ -7,7 +7,7 @@ services:
     ports:
       - 2048:8443
     env_file:
-      - /soft/code-server/config.env
+      - /config/config.env
     environment:
       - PUID=1000
       - PGID=1000
@@ -23,4 +23,3 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime
       - /soft/code-server/config:/config/
-      
