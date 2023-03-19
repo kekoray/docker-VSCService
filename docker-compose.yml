@@ -16,9 +16,9 @@ services:
       # - SUDO_PASSWORD_HASH= 
       # - PROXY_DOMAIN=code-server.my.domain         # 反向代理设置
       # - CODE_SERVER_CONFIG=/config/config.yaml
-      - DEFAULT_WORKSPACE=/config/workspace
+      # - DEFAULT_WORKSPACE=/config/workspace
     volumes:
       - /etc/localtime:/etc/localtime
       - /soft/code-server/config:/config
-      - /soft/code-server/config/config.yaml:/config/.config/code-server/config.yaml
+      # - /soft/code-server/config/config.yaml:/config/.config/code-server/config.yaml
 
