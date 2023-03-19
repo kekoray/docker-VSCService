@@ -20,5 +20,5 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime
       - /soft/code-server/config:/config/
-      - /soft/code-server/config/config.yaml:~/.config/code-server/config.yaml
+      - /soft/code-server/config/config.yaml:/home/root/.config/code-server/config.yaml
 
