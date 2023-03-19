@@ -1,0 +1,25 @@
+version: "3"
+services:
+  code-server:
+    image: linuxserver/code-server:latest
+    container_name: code-server
+    restart: unless-stopped
+    ports:
+      - 2048:8443
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      # - PASSWORD=password  
+      # - SUDO_PASSWORD=password      # 用该密码获取sudo
+      - HASHED_PASSWORD=password
+      - SUDO_PASSWORD_HASH=password
+      # - PROXY_DOMAIN=code-server.my.domain   # 反向代理设置
+      - DEFAULT_WORKSPACE=/workspace
+      - CODE_SERVER_CONFIG=/config/config.yaml
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /soft/code-server/config:/config
+      - /soft/code-server/workspace:/workspace
+    networks:
+      - appDefault_net
