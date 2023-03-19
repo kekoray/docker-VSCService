@@ -6,19 +6,24 @@ services:
     restart: unless-stopped
     ports:
       - 2048:8443
+    secrets:  # 传入secrets到/run/secrets/目录下
+      - code_server_password
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
-      # - PASSWORD=password  
-      - FILE__PASSWORD=/config/passwd
-      # - FILE__HASHED_PASSWORD=/config/passwd
+      # - PASSWORD=password   
       # - SUDO_PASSWORD=password                     # 用该密码获取sudo
-      # - FILE__SUDO_PASSWORD=/config/passwd
-      # - FILE__SUDO_PASSWORD_HASH=/config/passwd
+      - HASHED_PASSWORD=/run/secrets/code_server_password
+      - SUDO_PASSWORD_HASH=/run/secrets/code_server_password
       # - PROXY_DOMAIN=code-server.my.domain         # 反向代理设置
-      - CODE_SERVER_CONFIG=/config/config.yaml
+      # - CODE_SERVER_CONFIG=/config/config.yaml
       - DEFAULT_WORKSPACE=/config/workspace
     volumes:
       - /etc/localtime:/etc/localtime
       - /soft/code-server/config:/config/
+
+# 使用secrets
+secrets:
+  code_server_password:
+    external: true
