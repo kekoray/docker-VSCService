@@ -10,7 +10,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
-      # - PASSWORD=password   
+      - PASSWORD=password   
       # - SUDO_PASSWORD=password                     # 用该密码获取sudo
       # - HASHED_PASSWORD= 
       # - SUDO_PASSWORD_HASH= 
