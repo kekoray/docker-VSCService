@@ -6,20 +6,17 @@ services:
     restart: unless-stopped
     ports:
       - 2048:8443
-    env_file:
-      - /config/config.env
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
-      # - FILE__PASSWORD=/config/config.yaml
       # - PASSWORD=password  
-      # - SUDO_PASSWORD=password      # 用该密码获取sudo
-      # - HASHED_PASSWORD=password
-      # - SUDO_PASSWORD_HASH=password
-      # - PROXY_DOMAIN=code-server.my.domain   # 反向代理设置
+      - FILE__HASHED_PASSWORD=/config/passwd
+      # - SUDO_PASSWORD=password                     # 用该密码获取sudo
+      - FILE__SUDO_PASSWORD_HASH=/config/passwd
+      # - PROXY_DOMAIN=code-server.my.domain         # 反向代理设置
       # - CODE_SERVER_CONFIG=/config/config.yaml
-      - DEFAULT_WORKSPACE=/soft/code-server/workspace
+      - DEFAULT_WORKSPACE=/config/workspace
     volumes:
       - /etc/localtime:/etc/localtime
       - /soft/code-server/config:/config/
