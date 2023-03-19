@@ -11,13 +11,13 @@ services:
       - PGID=1000
       - TZ=Asia/Shanghai
       # - PASSWORD=password  
-      - FILE__PASSWORD=/soft/code-server/config/passwd
+      - FILE__PASSWORD=/config/passwd
       # - FILE__HASHED_PASSWORD=/config/passwd
       # - SUDO_PASSWORD=password                     # 用该密码获取sudo
-      - FILE__SUDO_PASSWORD=/soft/code-server/config/passwd
+      # - FILE__SUDO_PASSWORD=/config/passwd
       # - FILE__SUDO_PASSWORD_HASH=/config/passwd
       # - PROXY_DOMAIN=code-server.my.domain         # 反向代理设置
-      # - CODE_SERVER_CONFIG=/config/config.yaml
+      - CODE_SERVER_CONFIG=/config/config.yaml
       - DEFAULT_WORKSPACE=/config/workspace
     volumes:
       - /etc/localtime:/etc/localtime
