@@ -10,6 +10,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
+      - FILE__PASSWORD=/config/config.yaml
       # - PASSWORD=password  
       # - SUDO_PASSWORD=password      # 用该密码获取sudo
       # - HASHED_PASSWORD=password
@@ -21,4 +22,4 @@ services:
       - /etc/localtime:/etc/localtime
       - /soft/code-server/config:/config/
       # - /soft/code-server/config/config.yaml:/config/config.yaml
-      - /soft/code-server/workspace:/config/workspace
+      # - /soft/code-server/workspace:/config/workspace
