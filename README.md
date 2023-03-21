@@ -1,2 +1,2 @@
-# docker-codeServer
+# docker-VSCService
 Docker-compose build program with portainer.
