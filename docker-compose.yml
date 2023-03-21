@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   code-server:
-    image: linuxserver/code-server:latest
+    image: koray2021/code-server:latest
     container_name: code-server
     restart: unless-stopped
     ports:
@@ -11,10 +11,10 @@ services:
       - PGID=1000
       - TZ=Asia/Shanghai
       - PASSWORD=${password}
-      - SUDO_PASSWORD=${password} # 用该密码获取sudo
-      # - HASHED_PASSWORD=${password}
+      - SUDO_PASSWORD=${password}              # 用该密码获取sudo
+      # - HASHED_PASSWORD=${password}          # hash与config文件配置密码都无效
       # - SUDO_PASSWORD_HASH=${password}
-      # - PROXY_DOMAIN=code-server.my.domain         # 反向代理设置
+      # - PROXY_DOMAIN=code-server.my.domain   # 反向代理设置
       - DEFAULT_WORKSPACE=/config/workspace
     volumes:
       - /etc/localtime:/etc/localtime
