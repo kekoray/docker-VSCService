@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   code-server:
-    image: koray2021/code-server:latest
+    image: koray2021/code-server:4.14.1
     container_name: code-server
     restart: unless-stopped
     ports:
@@ -18,5 +18,4 @@ services:
       - DEFAULT_WORKSPACE=/config/workspace
     volumes:
       - /etc/localtime:/etc/localtime
-      - /soft/code-server/config:/config
-
+      - ./config:/config
