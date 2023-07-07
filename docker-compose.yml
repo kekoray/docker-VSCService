@@ -1,9 +1,10 @@
 version: "3.1"
 services:
   code-server:
-    image: koray2021/code-server:4.14.1
+    image: koray2021/code-server:4.14.1-arm64
     container_name: code-server
-    restart: unless-stopped
+    hostname: code-server
+    restart: always
     ports:
       - 2048:8443
     environment:
