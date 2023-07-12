@@ -14,7 +14,6 @@
 docker-VSCService/
 ├── .env     # 传参文件
 ├── docker-compose.yml    
-├── docker-compose_arm64.yml     
 └── README.md
 ```
 
